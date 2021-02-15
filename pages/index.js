@@ -1,9 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
+import Header from '../components/Header';
 
 const Index = () => {
     return (
         <div>
+            <Header />
             <h1>!Next.js</h1>
             <h2>
                 <Link href="/about">

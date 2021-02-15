@@ -1,7 +1,13 @@
 import React from 'react';
+import Header from '../components/Header';
 
 const About = () => {
-    return <div>안녕하세요!</div>;
+    return (
+        <div>
+            <Header />
+            <h2>안녕하세요!</h2>
+        </div>
+    );
 };
 
 export default About;

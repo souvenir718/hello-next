@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import Layout from '../components/Layout';
+import axios from 'axios';
 
 class SSRTest extends Component {
     static async getInitialProps({ req }) {
-        return req
-            ? { from: 'server' } // 서버에서 실행할 시
-            : { from: 'client' }; // 클라이언트에서 실행할 시
+        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+        return {
+            users: response.data,
+        };
     }
     render() {
-        return <Layout>{this.props.from} 에서 실행!</Layout>;
+        const { users } = this.props;
+
+        const userList = users.map((user) => <li key={user.id}>{user.username}</li>);
+
+        return (
+            <Layout>
+                <ul>{userList}</ul>
+            </Layout>
+        );
     }
 }
 

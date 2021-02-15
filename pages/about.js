@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 
 const About = () => {
     return (
-        <div>
-            <Header />
+        <Layout>
             <h2>안녕하세요!</h2>
-        </div>
+        </Layout>
     );
 };
 
